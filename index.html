@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Assignment-2</title>
+	<style>
+	#inner1 {
+  width: 70%;
+  margin-left: 200px;
+  background-color: lightpink;
+  border: 4px solid green;
+  color: white;
+}
+body{
+  background-color: skyblue;
+}
+#something {
+  text-align: center;
+}
+.bton {
+  float: right;
+  margin-right: 25px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+
+#lightgreen {
+  background-color: lightgreen;
+}
+#darkblue {
+  background-color: darkblue;
+}
+#orange{
+  background-color: orange;
+}
+#maroon {
+  background-color: maroon;
+}
+.cnvt{text-align: center;
+  margin-left: 390px;
+  width: 40%;
+  height: 50px;
+  border: 4px solid green;}
+
+h3{text-align: center;
+  margin-left: 25px;
+  font-size: 25px;
+}
+h4{
+  text-align: center;
+  font-size: 40px;
+}
+.l{
+  text-align: center;
+  width: 30%;
+  margin-left: 480px;
+  border: 4px solid green;
+}
+.m{width: 80%;
+  height: 300px;
+  margin-left: 100px;
+  border: 50px solid grey;
+  text-align: center;
+}
+
+.cen {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  <div class="inner">
+  	<h2 class="cen"><u>1.1 Quote Box</u></h2>
+      <div id="inner1">
+        <p id="something">Something</p>
+  </div><br
+   <div class="s">
+        <button class="bton" id="lightgreen"></button>
+        <button class="bton" id="darkblue"></button>
+        <button class="bton" id="orange"></button>
+        <button class="bton" id="maroon"></button>
+      </div>
+
+    </div><br><br><br><br>
+    <div>
+    	<h2 class="cen"><u>1.2 Hero Converter</u></h2>
+    	<div class="cnvt"><br>
+      <span> Convert
+        <input id="quantity" type="number" placeholder="Enter  weight">
+        <select id="my-select">
+          <option value="lb">lb to kg</option>
+          <option value="kg">kg to lb</option>
+        </select>
+        <button id="btn" type="button">Go</button>
+        <span id="total"></span>
+       </span>
+  </div>
+    </div>
+    <div><br><br><br><br>
+     
+     <h3><u>Part 2</u></h3>
+      <div class="l">
+      	<br>
+      <span>Input Series of Number</span> 
+      <input id="arr" type="text" placeholder="Enter numbers" />
+     <button id="sub" type="button">Submit</button>
+      <p>Max : <span id="max">00</span></p>
+      <p>Min : <span id="min">00</span></p>
+      <p>Sum : <span id="sum">00</span></p>
+      <p>Average : <span id="average">00</span></p>
+      <p>Reverse Order : <span id="reverse order">00</span></p>
+    </div></div><div>
+    	<br><br><br>
+     
+    
+      <h4><u>Magic!</u></h4>
+      <div id="magic">
+      <div class="m"><br><br>
+      <textarea name="" id="text" cols="80" rows="12" placeholder="See magic here!"></textarea>
+      <br>
+      <button onclick="document.getElementById('text').value = ''">Clear It</button>
+	<button onclick="capitalize(document.getElementById('text').value)">Capitalize</button>
+	<button onclick="sortout(document.getElementById('text').value)">Sort</button>
+	<button onclick="addNo(document.getElementById('text').value)">Add Number</button>
+   <button onclick="rev(document.getElementById('text').value)">Reverse</button>
+   <button onclick="blankRmv()">Strip Blank</button>
+   <button onclick="shuff(document.getElementById('text').value)">Shuffle</button>
+   <script type="text/javascript">
+
+function clear() {
+	document.getElementById('text').value = ' ';
+}
+
+function capitalize() {
+	var textArea= document.getElementById("text").value;
+            var arrayOfLines = textArea.split("\n");
+            if(!hasLowerCase(textArea)){document.getElementById("text").value=textArea.toLowerCase();}
+            
+            if(hasLowerCase(textArea)){
+            document.getElementById("text").value=textArea.toUpperCase();
+}
+}
+ function hasLowerCase(str) {
+             return (/[a-z]/.test(str));
+            }
+
+function sortout() {
+	var textarea = document.getElementById("text");
+	textarea.value = textarea.value.split("\n").sort().join("\n");
+	document.querySelector('text').value = textarea.value;
+}
+
+function rev() {
+	var reverse = document.getElementById("text");
+	reverse.value = reverse.value.split("\n").reverse().join("\n");
+	document.querySelector('text').value = reverse.value;
+}
+
+function blankRmv() {
+    var output = document.getElementById("text").value;
+    output = output.replace(/\s/g, "") 
+    document.getElementById("text").value = output;
+}
+
+function qtext(x) {
+	var text = document.getElementById('quote');
+	text.style.color = x.value;
+}
+
+onload = function() {
+	randomQuote();
+}
+
+function addNo() {
+	var str = document.getElementById('text').value;
+	var arr = str.split("\n");
+
+	for(var i=0;i<arr.length;i++){
+		arr[i]=Math.random()+arr[i];
+	}
+	var stuff = arr.join("\n");
+	document.getElementById("text").value = stuff;
+}
+
+function shuff() {
+	var shuff = document.getElementById("text");
+	shuff.value = shuff.value.split("\n").shuffle().join("\n");
+	document.querySelector('text').value = shuff.value;
+}
+			</script>
+       
+  
+    </div></div>
+
+    <script>
+      const a = [
+        'All our dreams can come true, if we have the courage to pursue them.','Keep your face to the sunshine and you cannot see a shadow.','Winning doesn’t always mean being first. Winning means you’re doing better than you’ve done before.','Every day may not be good... but there’s something good in every day.'
+           ];
+      const something = document.getElementById("something");
+      function b() {
+        const c = Math.floor(Math.random() * 3);
+        return a[c];
+      }
+      something.innerText = b();
+      document.getElementById("maroon").addEventListener("click", function () {
+        document.getElementById("inner1").style.backgroundColor = "maroon";
+        document.getElementById("inner1").style.border = "thick solid green";
+        document.getElementById("inner1").style.color = "pink";
+      });
+      document.getElementById("lightgreen").addEventListener("click", function () {
+        document.getElementById("inner1").style.backgroundColor = "lightgreen";
+        document.getElementById("inner1").style.border = "thick solid red";
+        document.getElementById("inner1").style.color = "blue";
+        document.getElementById("inner1").style.fontWeight = "bolder";
+      });
+      document.getElementById("darkblue").addEventListener("click", function () {
+        document.getElementById("inner1").style.backgroundColor = "darkblue";
+        document.getElementById("inner1").style.border = "thick solid yellow";
+       document.getElementById("inner1").style.color = "lightgrey";
+      });
+      document.getElementById("orange").addEventListener("click", function () {
+        document.getElementById("inner1").style.backgroundColor = "orange";
+        document.getElementById("inner1").style.border = "thick solid blue";
+        document.getElementById("inner1").style.color = "blue";
+      });
+      document.getElementById("btn").addEventListener("click", function () {
+        if (document.getElementById("my-select").value == "lb") {
+          document.getElementById("total").innerText =
+            document.getElementById("quantity").value * 0.4536;
+        } else {
+          document.getElementById("total").innerText =
+            document.getElementById("quantity").value * 2.2046;
+        }
+      });
+      document.getElementById("sub").addEventListener("click", function () {
+        var g = document.getElementById("arr").value;
+        var k = g.split(",");
+        document.getElementById("max").innerText = Math.max(...k);
+        document.getElementById("min").innerText = Math.min(...k);
+        function ad(m) {
+          var s = 0;
+          for (var i = 0; i < m.length; i++) {
+            var t = parseFloat(m[i]);
+            s = s + t;
+          }
+          return s;
+        }
+        document.getElementById("sum").innerText = ad(k);
+        function avg(e) {
+          var y = ad(e);
+          var w = y / e.length;
+          return w;
+        }
+        document.getElementById("average").innerText = avg(k);
+        function rev(p) {
+          z = p.reverse();
+          return z;
+        }
+        document.getElementById("reverse order").innerText = rev(k);
+      });
+      
+    </script>
+</body>
+</html>
